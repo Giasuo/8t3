@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bé Yêu Của Anh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="preload">
+    <!-- Enhanced animated background -->
+    <div class="bubbles" id="bubbles"></div>
+    <div class="bg-hearts" id="bgHearts"></div>
+
+    <div class="container">
+        <!-- Calculator screen -->
+        <div class="calculator-screen" id="calculatorScreen">
+            <div class="input-avatar-row">
+                <div class="avatar-square">
+                    <img id="avatarImg" src="img/gaixenh1.jpg" alt="Avatar" style="display:block;">
+                </div>
+                <div class="input-and-keypad">
+                    <div class="calculator-title">Nhập ngày tháng năm sinh của bé</div>
+                    <input type="password" class="display" id="display" placeholder="••••••" maxlength="6">
+                    <div class="buttons">
+                        <button class="btn btn-number" onclick="appendToDisplay('1')">1</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('2')">2</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('3')">3</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('4')">4</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('5')">5</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('6')">6</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('7')">7</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('8')">8</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('9')">9</button>
+                        <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('0')">0</button>
+                        <button class="btn btn-enter" onclick="checkPassword()">✓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="myAudio">
+            <source src="umbrela.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+    </div>
+
+    <!-- Birthday screen nằm ngoài container -->
+    <div class="birthday-screen" id="birthdayScreen" style="display:none;">
+        <!-- Trang lời chúc đẹp -->
+        <div class="wishes-page" id="wishesPage">
+            <div class="main-title">
+                <h1 class="rainbow-text">💗CHÚC MỪNG BÉ 8/3 💗</h1>
+                <div class="subtitle" style="font-family;" >Click ảnh bên dưới trước nho</div>
+            </div>
+            
+            <!-- Thiệp 3D -->
+            <div class="birthday-card-section">
+                <div class="card-3d">
+                    <div class="card-imgBox">
+                        <div class="card-bark"></div>
+                        <img src="img/gaixenh.jpg" alt="Birthday">
+                    </div>
+                    <div class="card-details">
+                        <h4>HAPPY International Women's Day</h4>
+                        <div style="text-align:left;">
+                            <p> Mở lời:</p>
+                            <p>~Chúc bbi ngày 8 tháng 3 vui vẻ ~</p>
+                            <p>Mong cậu luôn vui vẻ và hạnh phúc.</p>
+                            <p>Càng ngày càng xinh đẹp và đáng yêu.</p>
+                            <p>Chúc cậu nhiều niềm vui, nhiều may mắn, luôn đón nhận những điều tốt đẹp nhất.</p>
+                            <p>Ngày càng dễ thương và mãi là người phụ nữ của tớ :>> 💕</p>
+                            <p style="margin-top:24px;text-align:right;font-style:italic;color:#c44569;font-size:16px;">
+            Ký Tên<br>
+            <span style="font-family:'Dancing Script',cursive;font-size:13px;color:#f388ac;">Giasuo</span><br>
+            <span style="font-family:'Dancing Script',cursive;font-size:13px;color:#ec6894;text-align: center;"> (Your loveeeeeeeeeeeeeeee )</span>
+        <div style="text-align:center;margin-top:18px;">
+            <span style="font-size:24px;color:#ff6b9d;">♡ ♡ ♡ ♡ ♡</span>
+        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="continue-btn" onclick="showLetter()">Open Here</button>
+            <audio id="myAudio">
+            <source src="thienly.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+        </div>
+    <div id="heartGallery" class="heart-gallery" style="display:none;"></div>
+    
+    <script src="lang.js"></script>
+    <script>
+    // Phát nhạc khi chạm vào màn hình lần đầu
+    let audioPlayed = false;
+    function playAudioOnFirstTouch() {
+        if (!audioPlayed) {
+            audioPlayed = true;
+            if (typeof playAudio === 'function') {
+                playAudio();
+            } else {
+                var audio = document.getElementById('myAudio');
+                if (audio) audio.play();
+            }
+        }
+    }
+    document.addEventListener('click', playAudioOnFirstTouch);
+    document.addEventListener('touchstart', playAudioOnFirstTouch);
+    </script>
+</body>
+</html>
